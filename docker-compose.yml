@@ -1,0 +1,14 @@
+postgres:
+  image: postgres:14
+  container_name: postgres-fts
+  ports:
+    - '5432:5432'
+  environment:
+    - POSTGRES_DB=fts
+    - POSTGRES_USER=root
+    - POSTGRES_PASSWORD=root
+    - POSTGRES_HOSTNAME=postgres
+    - TZ=Etc/GMT
+    - PGTZ=Etc/GMT
+  volumes:
+    - ./data/.db:/var/lib/postgresql/data
