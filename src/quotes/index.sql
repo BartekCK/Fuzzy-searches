@@ -37,6 +37,6 @@ CREATE INDEX quotes_document_idx
         USING GIN (quotes_document_with_idx);
 
 
-SELECT * FROM quotes WHERE to_tsvector(quotes.category) @@ 'albert & einstein';
-SELECT * FROM quotes WHERE quotes_document_with_idx @@ to_tsquery('albert & einstein');
+explain analyse SELECT * FROM quotes WHERE to_tsvector(quotes.category) @@ 'albert & einstein';
+explain analyse SELECT * FROM quotes WHERE quotes_document_with_idx @@ to_tsquery('albert & einstein');
 

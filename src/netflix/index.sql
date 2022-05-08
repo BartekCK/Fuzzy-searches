@@ -36,9 +36,9 @@ CREATE EXTENSION IF NOT EXISTS pg_trgm;
 
 SELECT show_trgm('Node.js');
 
-SELECT similarity('word', 'words two1');
-SELECT word_similarity('word', 'words two1');
-SELECT strict_word_similarity('word', 'words two1');
+SELECT similarity('word', 'words two12');
+SELECT word_similarity('worda', 'words two1112');
+SELECT strict_word_similarity('words', 'words two1');
 
 SELECT title from netflix where title % 'braking bad'; --misspelling
 
@@ -63,7 +63,7 @@ SELECT to_tsvector('english','Ala ma kota i ala ma psa, calka'); -- Take a look 
 -- tsquery differences
 SELECT title
 FROM netflix
-WHERE title @@ 'getting so fat';
+WHERE title @@ 'getting & fat';
 
 SELECT title
 FROM netflix
